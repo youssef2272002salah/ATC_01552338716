@@ -1,0 +1,2407 @@
+{
+	"info": {
+		"_postman_id": "0e801dd6-5f08-40d8-85a8-df6c6824c1eb",
+		"name": "TypeScript-Backend-Starter🚀",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39345066",
+		"_collection_link": "https://solar-spaceship-411014.postman.co/workspace/My-Workspace~9edeea7d-7e38-422e-829f-d9c9f32a38e4/collection/39345066-0e801dd6-5f08-40d8-85a8-df6c6824c1eb?action=share&source=collection_link&creator=39345066"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Save token\", function () {",
+									"    const response = pm.response.json();",
+									"    if (response.token) {",
+									"        pm.environment.set(\"token\", response.token);",
+									"        console.log(\"Token saved:\", response.token);",
+									"    } else {",
+									"        console.warn(\"No token found in response.\");",
+									"    }",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"youssef22772002salah@gmail.com\",\r\n    \"password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}auth/login",
+							"host": [
+								"{{url}}auth"
+							],
+							"path": [
+								"login"
+							]
+						},
+						"description": "### ✅ **2\\. Login**\n\n- **Method:** `POST`\n    \n- **URL:** `/api/v1/auth/login`\n    \n- **Body (JSON):**\n    \n\n```\njsonCopyEdit{\n  \"email\": \"johndoe@example.com\",\n  \"password\": \"Password123\"\n}\n\n ```\n\n- **Success (200):**\n    \n\n```\njsonCopyEdit{\n  \"status\": \"success\",\n  \"message\": \"Login successful\",\n  \"data\": {\n    \"accessToken\": \"abc123xyz\"\n  }\n}\n\n ```\n\n---"
+					},
+					"response": [
+						{
+							"name": "Login Example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"omar@syria.com\",\r\n    \"password\":\"omar@123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "127.0.0.1:5000/api/v1/auth/login",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "312"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"138-bQdsVQABPDKfL/lwzHpUER2SsS8\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 19 Jan 2025 18:34:55 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NTIxNTk5OSwiZW1haWwiOiJvbWFyQHN5cmlhLmNvbSIsIm5hbWUiOiJNYWhtb3VkIEFobWVkIiwiYXZhdGFyIjoiU2F0IEphbiAxOCAyMDI1cGVyc29uXzEuanBlZyIsImZvbGxvd2VycyI6MCwiZm9sbG93aW5nIjowLCJpYXQiOjE3MzczMTE2OTUsImV4cCI6MTc0NTA4NzY5NX0.t_S1Lq_q-eNpdwsHg0_f_qDqnnk_RfIF-AkXsioA600\"\n}"
+						}
+					]
+				},
+				{
+					"name": "log out",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Save token\", function () {",
+									"    const response = pm.response.json();",
+									"    if (response.token) {",
+									"        pm.environment.set(\"token\", response.token);",
+									"        console.log(\"Token saved:\", response.token);",
+									"    } else {",
+									"        console.warn(\"No token found in response.\");",
+									"    }",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"youssef22772002salah@gmail.com\",\r\n    \"password\":\"1234567\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}auth/logout",
+							"host": [
+								"{{url}}auth"
+							],
+							"path": [
+								"logout"
+							]
+						},
+						"description": "### ✅ **3\\. Logout**\n\n- **Method:** `GET`\n    \n- **URL:** `/api/v1/auth/logout`\n    \n- **Success (200):**\n    \n\n```\njsonCopyEdit{\n  \"message\": \"Logout successful\"\n}\n\n ```"
+					},
+					"response": [
+						{
+							"name": "Login Example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"omar@syria.com\",\r\n    \"password\":\"omar@123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "127.0.0.1:5000/api/v1/auth/login",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "312"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"138-bQdsVQABPDKfL/lwzHpUER2SsS8\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 19 Jan 2025 18:34:55 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NTIxNTk5OSwiZW1haWwiOiJvbWFyQHN5cmlhLmNvbSIsIm5hbWUiOiJNYWhtb3VkIEFobWVkIiwiYXZhdGFyIjoiU2F0IEphbiAxOCAyMDI1cGVyc29uXzEuanBlZyIsImZvbGxvd2VycyI6MCwiZm9sbG93aW5nIjowLCJpYXQiOjE3MzczMTE2OTUsImV4cCI6MTc0NTA4NzY5NX0.t_S1Lq_q-eNpdwsHg0_f_qDqnnk_RfIF-AkXsioA600\"\n}"
+						}
+					]
+				},
+				{
+					"name": "sign up",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"fullname\": \"youssef\",\r\n  \"email\": \"youssef22772002salah@gmail.com\",\r\n  \"password\": \"123456\",\r\n  \"passwordConfirm\": \"123456\",\r\n  \"country\": \"USA\",\r\n  \"phone\": \"1234567890\",\r\n  \"phoneCode\": \"+1\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}auth/signup",
+							"host": [
+								"{{url}}auth"
+							],
+							"path": [
+								"signup"
+							]
+						},
+						"description": "### ✅ **1\\. Sign Up**\n\n- **Method:** `POST`\n    \n- **URL:** `/api/v1/auth/signup`\n    \n- **Body (JSON):**\n    \n\n```\njsonCopyEdit{\n  \"fullname\": \"John Doe\",\n  \"email\": \"johndoe@example.com\",\n  \"password\": \"Password123\",\n  \"passwordConfirm\": \"Password123\",\n  \"country\": \"USA\",\n  \"phone\": \"1234567890\",\n  \"phoneCode\": \"+1\"\n}\n\n ```\n\n- **Success (201):**\n    \n\n```\njsonCopyEdit{\n  \"status\": \"success\",\n  \"message\": \"Signup successful! Please verify your email.\",\n  \"user\": {\n    \"id\": \"12345\",\n    \"fullname\": \"John Doe\",\n    \"email\": \"johndoe@example.com\"\n  }\n}\n\n ```"
+					},
+					"response": [
+						{
+							"name": "Login Example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"omar@syria.com\",\r\n    \"password\":\"omar@123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "127.0.0.1:5000/api/v1/auth/login",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "312"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"138-bQdsVQABPDKfL/lwzHpUER2SsS8\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 19 Jan 2025 18:34:55 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NTIxNTk5OSwiZW1haWwiOiJvbWFyQHN5cmlhLmNvbSIsIm5hbWUiOiJNYWhtb3VkIEFobWVkIiwiYXZhdGFyIjoiU2F0IEphbiAxOCAyMDI1cGVyc29uXzEuanBlZyIsImZvbGxvd2VycyI6MCwiZm9sbG93aW5nIjowLCJpYXQiOjE3MzczMTE2OTUsImV4cCI6MTc0NTA4NzY5NX0.t_S1Lq_q-eNpdwsHg0_f_qDqnnk_RfIF-AkXsioA600\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Forget Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"youssef22772002salah@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}auth/forgot-password",
+							"host": [
+								"{{url}}auth"
+							],
+							"path": [
+								"forgot-password"
+							]
+						},
+						"description": "### **Forgot Password**\n\n- **Method:** `POST`\n    \n- **URL:** `/api/v1/auth/forgot-password`\n    \n- **Body (JSON):**\n    \n\n```\njsonCopyEdit{\n  \"email\": \"johndoe@example.com\"\n}\n\n ```\n\n- **Success (200):**\n    \n\n```\njsonCopyEdit{\n  \"status\": \"success\",\n  \"data\": {\n    \"message\": \"Password reset token sent\"\n  }\n}\n\n ```"
+					},
+					"response": [
+						{
+							"name": "Forget Password",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"ahmed@syria.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "127.0.0.1:5000/api/v1/auth/password/forget",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"password",
+										"forget"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "37"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"25-3nZuFtWPE3uEKzrbgOC4WnGk62s\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 31 Jan 2025 19:23:04 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Email sent successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "resend-verification-email",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"youremail@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}auth/resend-verification-email",
+							"host": [
+								"{{url}}auth"
+							],
+							"path": [
+								"resend-verification-email"
+							]
+						},
+						"description": "### **Resend Verification Email**\n\n- **Method:** `POST`\n    \n- **URL:** `/api/v1/auth/resend-verification-email`\n    \n- **Body (JSON):**\n    \n\n```\njsonCopyEdit{\n  \"email\": \"johndoe@example.com\"\n}\n\n ```\n\n- **Success (200):**\n    \n\n```\njsonCopyEdit{\n  \"message\": \"Verification email sent successfully\"\n}\n\n ```\n\n---"
+					},
+					"response": [
+						{
+							"name": "Forget Password",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"ahmed@syria.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "127.0.0.1:5000/api/v1/auth/password/forget",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"password",
+										"forget"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "37"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"25-3nZuFtWPE3uEKzrbgOC4WnGk62s\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 31 Jan 2025 19:23:04 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Email sent successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Reset Password",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"resetToken\":\"4fcbb8c3128a0174\",\r\n    \"password\":\"1234567\",\r\n    \"passwordConfirm\":\"1234567\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}auth/reset-password",
+							"host": [
+								"{{url}}auth"
+							],
+							"path": [
+								"reset-password"
+							]
+						},
+						"description": "### **Reset Password**\n\n- **Method:** `PATCH`\n    \n- **URL:** `/api/v1/auth/reset-password`\n    \n- **Body (JSON):**\n    \n\n```\njsonCopyEdit{\n  \"password\": \"NewPassword123\",\n  \"passwordConfirm\": \"NewPassword123\",\n  \"resetToken\": \"abc123xyz\"\n}\n\n ```\n\n- **Success (200):**\n    \n\n```\njsonCopyEdit{\n  \"status\": \"success\",\n  \"data\": {\n    \"message\": \"Password reset successful\"\n  }\n}\n\n ```"
+					},
+					"response": [
+						{
+							"name": "Reset Password",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"ahmed@syria.com\",\r\n    \"password\":\"ahmed@123\",\r\n    \"confirmPassword\":\"ahmed@123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "127.0.0.1:5000/api/v1/auth/password/reset/:token",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"password",
+										"reset",
+										":token"
+									],
+									"variable": [
+										{
+											"key": "token",
+											"value": "4286"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "245"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f5-0JU0P/8XF6ZNRYowIinX63vsbkk\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 31 Jan 2025 19:28:46 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3OTNlOTZjMzgzNDA5ZjhjZjY4YzMzNiIsImVtYWlsIjoiYWhtZWRAc3lyaWEuY29tIiwibmFtZSI6IkFobWVkIEhhbWVkIiwiaWF0IjoxNzM4MzUxNzI2LCJleHAiOjE3NDYxMjc3MjZ9.cU3ri_Rhg_WodkeK5wBlhoUhKYUPRX87citBKNtaCt4\"\n}"
+						}
+					]
+				}
+			],
+			"description": "# **API Documentation with React Examples**\n\n### **Base URL**\n\n```\nbashCopyEdithttp://localhost:3000/api/v1\n\n ```\n\n---\n\n## **Authentication Endpoints**\n\n### **1\\. Sign Up**\n\n#### **Endpoint:** `POST /auth/signup`\n\n#### **Description:** Creates a new user account.\n\n#### **Request Body:**\n\n```\njsonCopyEdit{\n  \"fullname\": \"John Doe\",\n  \"email\": \"johndoe@example.com\",\n  \"password\": \"securepassword\",\n  \"passwordConfirm\": \"securepassword\",\n  \"country\": \"USA\",\n  \"phone\": \"1234567890\",\n  \"phoneCode\": \"+1\"\n}\n\n ```\n\n#### **Response:**\n\n```\njsonCopyEdit{\n  \"status\": \"success\",\n  \"message\": \"Signup successful! Please verify your email.\",\n  \"data\": {\n    \"id\": \"user_id\",\n    \"fullname\": \"John Doe\",\n    \"email\": \"johndoe@example.com\",\n    \"role\": \"user\"\n  }\n}\n\n ```\n\n#### **React Example**\n\n```\njsxCopyEditimport axios from 'axios';\nconst signup = async (userData) => {\n  try {\n    const res = await axios.post('http://localhost:3000/api/v1/auth/signup', userData);\n    console.log(res.data);\n  } catch (error) {\n    console.error(error.response?.data);\n  }\n};\nsignup({\n  fullname: \"John Doe\",\n  email: \"johndoe@example.com\",\n  password: \"securepassword\",\n  passwordConfirm: \"securepassword\",\n  country: \"USA\",\n  phone: \"1234567890\",\n  phoneCode: \"+1\"\n});\n\n ```\n\n---\n\n### **2\\. Login**\n\n#### **Endpoint:** `POST /auth/login`\n\n#### **Description:** Logs in a user and returns a JWT token.\n\n#### **Request Body:**\n\n```\njsonCopyEdit{\n  \"email\": \"johndoe@example.com\",\n  \"password\": \"securepassword\"\n}\n\n ```\n\n#### **Response:**\n\n```\njsonCopyEdit{\n  \"status\": \"success\",\n  \"message\": \"Login successful\",\n  \"data\": {\n    \"token\": \"jwt_token\",\n    \"user\": {\n      \"id\": \"user_id\",\n      \"fullname\": \"John Doe\",\n      \"email\": \"johndoe@example.com\",\n      \"role\": \"user\"\n    }\n  }\n}\n\n ```\n\n#### **React Example**\n\n```\njsxCopyEditimport axios from 'axios';\nconst login = async (credentials) => {\n  try {\n    const res = await axios.post('http://localhost:3000/api/v1/auth/login', credentials);\n    console.log(res.data);\n  } catch (error) {\n    console.error(error.response?.data);\n  }\n};\nlogin({\n  email: \"johndoe@example.com\",\n  password: \"securepassword\"\n});\n\n ```\n\n---\n\n### **3\\. Logout**\n\n#### **Endpoint:** `POST /auth/logout`\n\n#### **Description:** Logs out the user by clearing the cookie.\n\n#### **Response:**\n\n```\njsonCopyEdit{\n  \"message\": \"Logout successful\"\n}\n\n ```\n\n#### **React Example**\n\n```\njsxCopyEditimport axios from 'axios';\nconst logout = async () => {\n  try {\n    const res = await axios.post('http://localhost:3000/api/v1/auth/logout');\n    console.log(res.data);\n  } catch (error) {\n    console.error(error.response?.data);\n  }\n};\nlogout();\n\n ```\n\n---\n\n### **4\\. Verify Email**\n\n#### **Endpoint:** `GET /auth/verify-email?token=`\n\n#### **Description:** Verifies user email.\n\n#### **Response:**\n\n```\njsonCopyEdit{\n  \"message\": \"Email verified successfully\"\n}\n\n ```\n\n#### **React Example**\n\n```\njsxCopyEditimport axios from 'axios';\nconst verifyEmail = async (token) => {\n  try {\n    const res = await axios.get(`http://localhost:3000/api/v1/auth/verify-email?token=${token}`);\n    console.log(res.data);\n  } catch (error) {\n    console.error(error.response?.data);\n  }\n};\nverifyEmail(\"verification_token\");\n\n ```\n\n---\n\n### **5\\. Resend Verification Email**\n\n#### **Endpoint:** `POST /auth/resend-verification`\n\n#### **Description:** Resends the verification email.\n\n#### **Request Body:**\n\n```\njsonCopyEdit{\n  \"email\": \"johndoe@example.com\"\n}\n\n ```\n\n#### **Response:**\n\n```\njsonCopyEdit{\n  \"message\": \"Verification email sent successfully\"\n}\n\n ```\n\n#### **React Example**\n\n```\njsxCopyEditimport axios from 'axios';\nconst resendVerificationEmail = async (email) => {\n  try {\n    const res = await axios.post('http://localhost:3000/api/v1/auth/resend-verification', { email });\n    console.log(res.data);\n  } catch (error) {\n    console.error(error.response?.data);\n  }\n};\nresendVerificationEmail(\"johndoe@example.com\");\n\n ```\n\n---\n\n### **6\\. Forgot Password**\n\n#### **Endpoint:** `POST /auth/forgot-password`\n\n#### **Description:** Sends a password reset email.\n\n#### **Request Body:**\n\n```\njsonCopyEdit{\n  \"email\": \"johndoe@example.com\"\n}\n\n ```\n\n#### **Response:**\n\n```\njsonCopyEdit{\n  \"status\": \"success\",\n  \"message\": \"Password reset token sent\"\n}\n\n ```\n\n#### **React Example**\n\n```\njsxCopyEditimport axios from 'axios';\nconst forgotPassword = async (email) => {\n  try {\n    const res = await axios.post('http://localhost:3000/api/v1/auth/forgot-password', { email });\n    console.log(res.data);\n  } catch (error) {\n    console.error(error.response?.data);\n  }\n};\nforgotPassword(\"johndoe@example.com\");\n\n ```\n\n---\n\n### **7\\. Reset Password**\n\n#### **Endpoint:** `PATCH /auth/reset-password`\n\n#### **Description:** Resets user password using a token.\n\n#### **Request Body:**\n\n```\njsonCopyEdit{\n  \"resetToken\": \"reset_token\",\n  \"password\": \"newpassword123\",\n  \"passwordConfirm\": \"newpassword123\"\n}\n\n ```\n\n#### **Response:**\n\n```\njsonCopyEdit{\n  \"status\": \"success\",\n  \"message\": \"Password has been reset\"\n}\n\n ```\n\n#### **React Example**\n\n```\njsxCopyEditimport axios from 'axios';\nconst resetPassword = async (data) => {\n  try {\n    const res = await axios.patch('http://localhost:3000/api/v1/auth/reset-password', data);\n    console.log(res.data);\n  } catch (error) {\n    console.error(error.response?.data);\n  }\n};\nresetPassword({\n  resetToken: \"reset_token\",\n  password: \"newpassword123\",\n  passwordConfirm: \"newpassword123\"\n});\n\n ```\n\n---\n\n### **8\\. Update Password**\n\n#### **Endpoint:** `PATCH /auth/update-password`\n\n#### **Description:** Updates user password while logged in.\n\n#### **Headers:**\n\n```\njsonCopyEdit{\n  \"Authorization\": \"Bearer jwt_token\"\n}\n\n ```\n\n#### **Request Body:**\n\n```\njsonCopyEdit{\n  \"password\": \"oldpassword\",\n  \"passwordConfirm\": \"oldpassword\"\n}\n\n ```\n\n#### **Response:**\n\n```\njsonCopyEdit{\n  \"status\": \"success\",\n  \"message\": \"Password updated successfully\"\n}\n\n ```\n\n#### **React Example**\n\n```\njsxCopyEditimport axios from 'axios';\nconst updatePassword = async (data) => {\n  try {\n    const res = await axios.patch('http://localhost:3000/api/v1/auth/update-password', data, {\n      headers: { Authorization: `Bearer jwt_token` }\n    });\n    console.log(res.data);\n  } catch (error) {\n    console.error(error.response?.data);\n  }\n};\nupdatePassword({\n  password: \"oldpassword\",\n  passwordConfirm: \"oldpassword\"\n});\n\n ```\n\n---\n\nThis documentation provides a **clear overview** of each authentication endpoint and **React example usage** for seamless frontend integration.\n\nWould you like examples for **protected routes** or **other endpoints** in your API?"
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Get All Users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MWU1YzQ3NGFkOGI4MDcxNjA5OGYwMiIsImlhdCI6MTc0Njk2OTAwNCwiZXhwIjoxNzQ2OTY5OTA0fQ.wHSM8nSWxQiM8GueYpCtPsfZ38sNJlsXj_YReeFU11c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}users",
+							"host": [
+								"{{url}}users"
+							]
+						},
+						"description": "## **Get All Users (Admin)**\n\n### **Endpoint:**\n\n`GET /api/users`\n\n### **Response:**\n\n```\njsonCopyEdit{\n  \"status\": \"success\",\n  \"data\": [\n    {\n      \"id\": \"65d9a6e79f4b2a001e4b7a23\",\n      \"fullname\": \"John Doe\",\n      \"email\": \"john@example.com\",\n      \"role\": \"user\"\n    }\n  ]\n}\n\n ```"
+					},
+					"response": [
+						{
+							"name": "Get All Users",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "127.0.0.1:5000/api/v1/user/all",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"all"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "686"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2ae-0Mw5RFHns1oW0nun0Wyyu2esTQ4\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Jan 2025 16:32:34 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"users\": [\n        {\n            \"_id\": \"678bc409e439a0a649f0e40b\",\n            \"googleId\": null,\n            \"memberId\": 5215999,\n            \"name\": \"Omar Ashraf\",\n            \"avatar\": \"Sat Jan 18 2025person_1.jpeg\",\n            \"email\": \"omar@syria.com\",\n            \"password\": \"$2b$10$pF/pfuS7jZXD6XMB6zdsTeqhXeF6Viq4T6gp.vxEV6LacV1pULige\",\n            \"followers\": 0,\n            \"following\": 0,\n            \"isDeleted\": false,\n            \"createdAt\": 1737212891421,\n            \"modifiedAt\": 1737212891421,\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"678bc61ae439a0a649f0e40f\",\n            \"googleId\": null,\n            \"memberId\": 4870562,\n            \"name\": \"Ahmed Hamed\",\n            \"avatar\": \"Sat Jan 18 2025person_1.jpeg\",\n            \"email\": \"ahmed@syria.com\",\n            \"password\": \"$2b$10$RdlH7goVlHQYW1Sd5MS78OZltbRGcGngYXhRwD8WS67jogbK9Fz.m\",\n            \"followers\": 0,\n            \"following\": 0,\n            \"isDeleted\": false,\n            \"createdAt\": 1737212891421,\n            \"modifiedAt\": 1737212891421,\n            \"__v\": 0\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get User By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}users/681e5a1372066da63d0bcefc",
+							"host": [
+								"{{url}}users"
+							],
+							"path": [
+								"681e5a1372066da63d0bcefc"
+							]
+						},
+						"description": "## **Get User by ID (Admin)**\n\n### **Endpoint:**\n\n`GET /api/users/:id`\n\n### **Response:**\n\n```\njsonCopyEdit{\n  \"status\": \"success\",\n  \"data\": {\n    \"id\": \"65d9a6e79f4b2a001e4b7a23\",\n    \"fullname\": \"John Doe\",\n    \"email\": \"john@example.com\",\n    \"role\": \"user\"\n  }\n}\n\n ```"
+					},
+					"response": [
+						{
+							"name": "Get User By Id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "127.0.0.1:5000/api/v1/user/:id",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"v1",
+										"user",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "5215999"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "237"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ed-r1FAxrS/Jkleb5Q6Q5VrGGsMsl4\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Jan 2025 17:10:10 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"user\": {\n        \"_id\": \"678bc409e439a0a649f0e40b\",\n        \"memberId\": 5215999,\n        \"name\": \"Omar Ashraf\",\n        \"avatar\": \"Sat Jan 18 2025person_1.jpeg\",\n        \"email\": \"omar@syria.com\",\n        \"followers\": 0,\n        \"following\": 0,\n        \"createdAt\": 1737212891421,\n        \"modifiedAt\": 1737212891421,\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get my profile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}users/me",
+							"host": [
+								"{{url}}users"
+							],
+							"path": [
+								"me"
+							]
+						},
+						"description": "## **1\\. Get My Profile**\n\n### **Endpoint:**\n\n`GET /api/users/me`\n\n### **Headers:**\n\n```\njsonCopyEdit{\n  \"Authorization\": \"Bearer jwt_token_here\"\n}\n\n ```\n\n### **Response:**\n\n```\njsonCopyEdit{\n  \"status\": \"success\",\n  \"data\": {\n    \"id\": \"65d9a6e79f4b2a001e4b7a23\",\n    \"fullname\": \"John Doe\",\n    \"email\": \"john@example.com\",\n    \"country\": \"USA\",\n    \"phone\": \"1234567890\",\n    \"phoneCode\": \"+1\"\n  }\n}\n\n ```\n\n### **Frontend Example (React)**\n\n```\njsCopyEditconst getUserProfile = async () => {\n  const response = await fetch('/api/users/me', {\n    method: 'GET',\n    headers: {\n      'Authorization': `Bearer ${localStorage.getItem('token')}`,\n    },\n  });\n  const data = await response.json();\n  console.log(data);\n};\n\n ```"
+					},
+					"response": [
+						{
+							"name": "Get User By Id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "127.0.0.1:5000/api/v1/user/:id",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"v1",
+										"user",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "5215999"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "237"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ed-r1FAxrS/Jkleb5Q6Q5VrGGsMsl4\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Jan 2025 17:10:10 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"user\": {\n        \"_id\": \"678bc409e439a0a649f0e40b\",\n        \"memberId\": 5215999,\n        \"name\": \"Omar Ashraf\",\n        \"avatar\": \"Sat Jan 18 2025person_1.jpeg\",\n        \"email\": \"omar@syria.com\",\n        \"followers\": 0,\n        \"following\": 0,\n        \"createdAt\": 1737212891421,\n        \"modifiedAt\": 1737212891421,\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update User By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"fullname\":\"youssef salah\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}users/681e5a1372066da63d0bcefc",
+							"host": [
+								"{{url}}users"
+							],
+							"path": [
+								"681e5a1372066da63d0bcefc"
+							]
+						},
+						"description": "## **6\\. Update User by ID (Admin)**\n\n### **Endpoint:**\n\n`PATCH /api/users/:id`\n\n### **Request Body:**\n\n```\njsonCopyEdit{\n  \"fullname\": \"Admin Updated\",\n  \"role\": \"admin\"\n}\n\n ```\n\n### **Response:**\n\n```\njsonCopyEdit{\n  \"status\": \"success\",\n  \"data\": {\n    \"id\": \"65d9a6e79f4b2a001e4b7a23\",\n    \"fullname\": \"Admin Updated\",\n    \"email\": \"admin@example.com\",\n    \"role\": \"admin\"\n  }\n}\n\n ```"
+					},
+					"response": [
+						{
+							"name": "Update User By Id",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Mahmoud Ahmed",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}user/:id",
+									"host": [
+										"{{url}}user"
+									],
+									"path": [
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "5215999"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "385"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"181-giL5nqFgR/xcJtHhDzyZRKkajo0\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Jan 2025 17:17:16 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User updated successfully\",\n    \"user\": {\n        \"_id\": \"678bc409e439a0a649f0e40b\",\n        \"googleId\": null,\n        \"memberId\": 5215999,\n        \"name\": \"Mahmoud Ahmed\",\n        \"avatar\": \"Sat Jan 18 2025person_1.jpeg\",\n        \"email\": \"omar@syria.com\",\n        \"password\": \"$2b$10$pF/pfuS7jZXD6XMB6zdsTeqhXeF6Viq4T6gp.vxEV6LacV1pULige\",\n        \"followers\": 0,\n        \"following\": 0,\n        \"isDeleted\": false,\n        \"createdAt\": 1737212891421,\n        \"modifiedAt\": 1737212891421,\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete User By Id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}users/681e5a1372066da63d0bcefc",
+							"host": [
+								"{{url}}users"
+							],
+							"path": [
+								"681e5a1372066da63d0bcefc"
+							]
+						},
+						"description": "## **7\\. Delete User by ID (Admin)**\n\n### **Endpoint:**\n\n`DELETE /api/users/:id`\n\n### **Response:**\n\n```\njsonCopyEdit{\n  \"status\": \"success\",\n  \"data\": null\n}\n\n ```"
+					},
+					"response": [
+						{
+							"name": "Delete User by Id",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url}}user/:id",
+									"host": [
+										"{{url}}user"
+									],
+									"path": [
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "4870562"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "39"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"27-27o4zzUjhHNmthTJyia4gBCjpos\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Jan 2025 23:03:36 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User deleted successfully\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "event",
+			"item": [
+				{
+					"name": "create event",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Tech Conference 2025\",\n  \"description\": \"An annual tech conference focused on emerging technologies.\",\n  \"category\": \"Technology\",\n  \"date\": \"2025-11-15T10:00:00.000Z\",\n  \"venue\": \"Cairo International Convention Center\",\n  \"price\": 150,\n  \"imageUrl\": \"https://example.com/images/tech-conf.jpg\",\n  \"tags\": [\"AI\", \"Blockchain\", \"Web3\"],\n  \"createdBy\": \"663cba4c0f0b6c3bcb88d8de\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}events/",
+							"host": [
+								"{{url}}events"
+							],
+							"path": [
+								""
+							]
+						},
+						"description": "### **Create Event**\n\n- **URL:** `POST /api/v1/events`\n    \n- **Auth Required:** ✅ Yes (Bearer Token)\n    \n- **Body Type:** `application/json`\n    \n\n**Request Body Example:**\n\n```\njsonCopyEdit{\n  \"name\": \"Tech Conference 2025\",\n  \"description\": \"A large-scale conference on AI, Web3, and more\",\n  \"category\": \"Technology\",\n  \"date\": \"2025-06-20T14:00:00Z\",\n  \"venue\": \"Silicon Valley Conference Center\",\n  \"price\": 49.99,\n  \"imageUrl\": \"https://example.com/event.jpg\",\n  \"createdBy\": \"507f1f77bcf86cd799439011\",\n  \"tags\": [\"ai\", \"web3\", \"networking\"]\n}\n\n ```\n\n**Success Response:**\n\n```\njsonCopyEdit{\n  \"status\": \"success\",\n  \"data\": {\n    \"id\": \"event_id\",\n    \"name\": \"Tech Conference 2025\",\n    \"description\": \"A large-scale conference on AI, Web3, and more\",\n    \"category\": \"Technology\",\n    \"date\": \"2025-06-20T14:00:00Z\",\n    \"venue\": \"Silicon Valley Conference Center\",\n    \"price\": 49.99,\n    \"imageUrl\": \"https://example.com/event.jpg\",\n    \"createdBy\": \"507f1f77bcf86cd799439011\",\n    \"tags\": [\"ai\", \"web3\", \"networking\"],\n    \"createdAt\": \"2025-05-11T12:00:00Z\",\n    \"updatedAt\": \"2025-05-11T12:00:00Z\"\n  }\n}\n\n ```\n\n---"
+					},
+					"response": [
+						{
+							"name": "Update User By Id",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Mahmoud Ahmed",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}user/:id",
+									"host": [
+										"{{url}}user"
+									],
+									"path": [
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "5215999"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "385"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"181-giL5nqFgR/xcJtHhDzyZRKkajo0\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Jan 2025 17:17:16 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User updated successfully\",\n    \"user\": {\n        \"_id\": \"678bc409e439a0a649f0e40b\",\n        \"googleId\": null,\n        \"memberId\": 5215999,\n        \"name\": \"Mahmoud Ahmed\",\n        \"avatar\": \"Sat Jan 18 2025person_1.jpeg\",\n        \"email\": \"omar@syria.com\",\n        \"password\": \"$2b$10$pF/pfuS7jZXD6XMB6zdsTeqhXeF6Viq4T6gp.vxEV6LacV1pULige\",\n        \"followers\": 0,\n        \"following\": 0,\n        \"isDeleted\": false,\n        \"createdAt\": 1737212891421,\n        \"modifiedAt\": 1737212891421,\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "get all events",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}events",
+							"host": [
+								"{{url}}events"
+							]
+						},
+						"description": "### **Get All Events**\n\n- **URL:** `GET /api/v1/events`\n    \n- **Auth Required:** ✅ Yes (Bearer Token)\n    \n- **Query Params:**\n    \n    - `page`: integer (default: 1)\n        \n    - `limit`: integer (default: 10)\n        \n\n**Success Response:**\n\n```\njsonCopyEdit{\n  \"status\": \"success\",\n  \"data\": [\n    {\n      \"id\": \"event_id\",\n      \"name\": \"Tech Conference 2025\",\n      \"description\": \"A large-scale conference on AI, Web3, and more\",\n      \"category\": \"Technology\",\n      \"date\": \"2025-06-20T14:00:00Z\",\n      \"venue\": \"Silicon Valley Conference Center\",\n      \"price\": 49.99,\n      \"imageUrl\": \"https://example.com/event.jpg\",\n      \"createdBy\": \"507f1f77bcf86cd799439011\",\n      \"tags\": [\"ai\", \"web3\", \"networking\"],\n      \"createdAt\": \"2025-05-11T12:00:00Z\",\n      \"updatedAt\": \"2025-05-11T12:00:00Z\"\n    }\n  ]\n}\n\n ```\n\n---"
+					},
+					"response": [
+						{
+							"name": "Update User By Id",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Mahmoud Ahmed",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}user/:id",
+									"host": [
+										"{{url}}user"
+									],
+									"path": [
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "5215999"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "385"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"181-giL5nqFgR/xcJtHhDzyZRKkajo0\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Jan 2025 17:17:16 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User updated successfully\",\n    \"user\": {\n        \"_id\": \"678bc409e439a0a649f0e40b\",\n        \"googleId\": null,\n        \"memberId\": 5215999,\n        \"name\": \"Mahmoud Ahmed\",\n        \"avatar\": \"Sat Jan 18 2025person_1.jpeg\",\n        \"email\": \"omar@syria.com\",\n        \"password\": \"$2b$10$pF/pfuS7jZXD6XMB6zdsTeqhXeF6Viq4T6gp.vxEV6LacV1pULige\",\n        \"followers\": 0,\n        \"following\": 0,\n        \"isDeleted\": false,\n        \"createdAt\": 1737212891421,\n        \"modifiedAt\": 1737212891421,\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "get events by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}events/681e6e05eb4c5cb5cab1e817",
+							"host": [
+								"{{url}}events"
+							],
+							"path": [
+								"681e6e05eb4c5cb5cab1e817"
+							]
+						},
+						"description": "### **Get Event by ID**\n\n- **URL:** `GET /api/v1/events/{id}`\n    \n- **Auth Required:** ✅ Yes (Bearer Token)\n    \n- **Path Param:** `id` — Event ID (string)\n    \n\n**Success Response:**\n\n```\njsonCopyEdit{\n  \"status\": \"success\",\n  \"data\": {\n    \"id\": \"event_id\",\n    \"name\": \"Tech Conference 2025\",\n    \"description\": \"A large-scale conference on AI, Web3, and more\",\n    \"category\": \"Technology\",\n    \"date\": \"2025-06-20T14:00:00Z\",\n    \"venue\": \"Silicon Valley Conference Center\",\n    \"price\": 49.99,\n    \"imageUrl\": \"https://example.com/event.jpg\",\n    \"createdBy\": \"507f1f77bcf86cd799439011\",\n    \"tags\": [\"ai\", \"web3\", \"networking\"],\n    \"createdAt\": \"2025-05-11T12:00:00Z\",\n    \"updatedAt\": \"2025-05-11T12:00:00Z\"\n  }\n}\n\n ```\n\n**Error (404 Not Found):**\n\n```\njsonCopyEdit{\n  \"status\": \"fail\",\n  \"message\": \"Event not found\"\n}\n\n ```\n\n---\n\n---"
+					},
+					"response": [
+						{
+							"name": "Update User By Id",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Mahmoud Ahmed",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}user/:id",
+									"host": [
+										"{{url}}user"
+									],
+									"path": [
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "5215999"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "385"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"181-giL5nqFgR/xcJtHhDzyZRKkajo0\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Jan 2025 17:17:16 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User updated successfully\",\n    \"user\": {\n        \"_id\": \"678bc409e439a0a649f0e40b\",\n        \"googleId\": null,\n        \"memberId\": 5215999,\n        \"name\": \"Mahmoud Ahmed\",\n        \"avatar\": \"Sat Jan 18 2025person_1.jpeg\",\n        \"email\": \"omar@syria.com\",\n        \"password\": \"$2b$10$pF/pfuS7jZXD6XMB6zdsTeqhXeF6Viq4T6gp.vxEV6LacV1pULige\",\n        \"followers\": 0,\n        \"following\": 0,\n        \"isDeleted\": false,\n        \"createdAt\": 1737212891421,\n        \"modifiedAt\": 1737212891421,\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "update events",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n      \"name\": \"Tech\"\n\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}events/681e6e05eb4c5cb5cab1e817",
+							"host": [
+								"{{url}}events"
+							],
+							"path": [
+								"681e6e05eb4c5cb5cab1e817"
+							]
+						},
+						"description": "### **Update Event by ID**\n\n- **URL:** `PATCH /api/v1/events/{id}`\n    \n- **Auth Required:** ✅ Yes (Bearer Token)\n    \n- **Path Param:** `id` — Event ID (string)\n    \n- **Body Type:** `application/json`\n    \n\n**Request Body Example:**\n\n```\njsonCopyEdit{\n  \"name\": \"Updated Conference 2025\",\n  \"price\": 59.99\n}\n\n ```\n\n**Success Response:**\n\n```\njsonCopyEdit{\n  \"status\": \"success\",\n  \"data\": {\n    \"id\": \"event_id\",\n    \"name\": \"Updated Conference 2025\",\n    \"price\": 59.99,\n    \"updatedAt\": \"2025-05-11T12:30:00Z\"\n    // ... other unchanged fields\n  }\n}\n\n ```\n\n**Error (404 Not Found):**\n\n```\njsonCopyEdit{\n  \"status\": \"fail\",\n  \"message\": \"Event not found\"\n}\n\n ```\n\n---\n\n---"
+					},
+					"response": [
+						{
+							"name": "Update User By Id",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Mahmoud Ahmed",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}user/:id",
+									"host": [
+										"{{url}}user"
+									],
+									"path": [
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "5215999"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "385"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"181-giL5nqFgR/xcJtHhDzyZRKkajo0\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Jan 2025 17:17:16 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User updated successfully\",\n    \"user\": {\n        \"_id\": \"678bc409e439a0a649f0e40b\",\n        \"googleId\": null,\n        \"memberId\": 5215999,\n        \"name\": \"Mahmoud Ahmed\",\n        \"avatar\": \"Sat Jan 18 2025person_1.jpeg\",\n        \"email\": \"omar@syria.com\",\n        \"password\": \"$2b$10$pF/pfuS7jZXD6XMB6zdsTeqhXeF6Viq4T6gp.vxEV6LacV1pULige\",\n        \"followers\": 0,\n        \"following\": 0,\n        \"isDeleted\": false,\n        \"createdAt\": 1737212891421,\n        \"modifiedAt\": 1737212891421,\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "delete events",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}events/681e6e05eb4c5cb5cab1e817",
+							"host": [
+								"{{url}}events"
+							],
+							"path": [
+								"681e6e05eb4c5cb5cab1e817"
+							]
+						},
+						"description": "### **Delete Event by ID**\n\n- **URL:** `DELETE /api/v1/events/{id}`\n    \n- **Auth Required:** ✅ Yes (Bearer Token)\n    \n- **Path Param:** `id` — Event ID (string)\n    \n\n**Success Response:**  \n  \n📭 No Content (HTTP `204`)\n\n**Error (404 Not Found):**\n\n```\njsonCopyEdit{\n  \"status\": \"fail\",\n  \"message\": \"Event not found\"\n}\n\n ```\n\n---"
+					},
+					"response": [
+						{
+							"name": "Update User By Id",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Mahmoud Ahmed",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}user/:id",
+									"host": [
+										"{{url}}user"
+									],
+									"path": [
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "5215999"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "385"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"181-giL5nqFgR/xcJtHhDzyZRKkajo0\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Jan 2025 17:17:16 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User updated successfully\",\n    \"user\": {\n        \"_id\": \"678bc409e439a0a649f0e40b\",\n        \"googleId\": null,\n        \"memberId\": 5215999,\n        \"name\": \"Mahmoud Ahmed\",\n        \"avatar\": \"Sat Jan 18 2025person_1.jpeg\",\n        \"email\": \"omar@syria.com\",\n        \"password\": \"$2b$10$pF/pfuS7jZXD6XMB6zdsTeqhXeF6Viq4T6gp.vxEV6LacV1pULige\",\n        \"followers\": 0,\n        \"following\": 0,\n        \"isDeleted\": false,\n        \"createdAt\": 1737212891421,\n        \"modifiedAt\": 1737212891421,\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "booking",
+			"item": [
+				{
+					"name": "create bookings",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"event\":\"681f3c8f4dd8d624f7d72caa\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}bookings/my",
+							"host": [
+								"{{url}}bookings"
+							],
+							"path": [
+								"my"
+							]
+						},
+						"description": "### **Create a Booking**\n\n- **URL:** `POST /api/v1/bookings/my`\n    \n- **Description:** Create a new booking for the logged-in user\n    \n- **Headers:**\n    \n    - `Authorization: Bearer`\n        \n    - `Content-Type: application/json`\n        \n- **Body:**\n    \n\n```\njsonCopyEdit{\n  \"event\": \"65fa94a3c7e32a1b23f93a8e\"\n}\n\n ```\n\n- **Success Response (201):**\n    \n\n```\njsonCopyEdit{\n  \"status\": \"success\",\n  \"data\": {\n    \"id\": \"65fb1231fae43a2b9b9ab123\",\n    \"user\": \"65f11231bcd43a1f9b8ab321\",\n    \"event\": \"65fa94a3c7e32a1b23f93a8e\",\n    \"bookingDate\": \"2025-05-09T12:30:00Z\",\n    \"status\": \"booked\",\n    \"createdAt\": \"2025-05-09T12:30:00Z\",\n    \"updatedAt\": \"2025-05-09T12:30:00Z\"\n  }\n}\n\n ```\n\n---"
+					},
+					"response": [
+						{
+							"name": "Update User By Id",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Mahmoud Ahmed",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}user/:id",
+									"host": [
+										"{{url}}user"
+									],
+									"path": [
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "5215999"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "385"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"181-giL5nqFgR/xcJtHhDzyZRKkajo0\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Jan 2025 17:17:16 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User updated successfully\",\n    \"user\": {\n        \"_id\": \"678bc409e439a0a649f0e40b\",\n        \"googleId\": null,\n        \"memberId\": 5215999,\n        \"name\": \"Mahmoud Ahmed\",\n        \"avatar\": \"Sat Jan 18 2025person_1.jpeg\",\n        \"email\": \"omar@syria.com\",\n        \"password\": \"$2b$10$pF/pfuS7jZXD6XMB6zdsTeqhXeF6Viq4T6gp.vxEV6LacV1pULige\",\n        \"followers\": 0,\n        \"following\": 0,\n        \"isDeleted\": false,\n        \"createdAt\": 1737212891421,\n        \"modifiedAt\": 1737212891421,\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "get all my bookings",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}bookings/my",
+							"host": [
+								"{{url}}bookings"
+							],
+							"path": [
+								"my"
+							]
+						},
+						"description": "### **Get All Bookings**\n\n- **URL:** `GET /api/v1/bookings`\n    \n- **Description:** Get all bookings (admin only)\n    \n- **Headers:**\n    \n    - `Authorization: Bearer`\n        \n- **Query Params:**\n    \n    - `page`: (optional) default is `1`\n        \n    - `limit`: (optional) default is `10`\n        \n- **Example:** `/api/v1/bookings?page=1&limit=5`\n    \n\n---\n\n---"
+					},
+					"response": [
+						{
+							"name": "Update User By Id",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Mahmoud Ahmed",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}user/:id",
+									"host": [
+										"{{url}}user"
+									],
+									"path": [
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "5215999"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "385"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"181-giL5nqFgR/xcJtHhDzyZRKkajo0\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Jan 2025 17:17:16 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User updated successfully\",\n    \"user\": {\n        \"_id\": \"678bc409e439a0a649f0e40b\",\n        \"googleId\": null,\n        \"memberId\": 5215999,\n        \"name\": \"Mahmoud Ahmed\",\n        \"avatar\": \"Sat Jan 18 2025person_1.jpeg\",\n        \"email\": \"omar@syria.com\",\n        \"password\": \"$2b$10$pF/pfuS7jZXD6XMB6zdsTeqhXeF6Viq4T6gp.vxEV6LacV1pULige\",\n        \"followers\": 0,\n        \"following\": 0,\n        \"isDeleted\": false,\n        \"createdAt\": 1737212891421,\n        \"modifiedAt\": 1737212891421,\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "get bookings by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}bookings/681e761e3f02150d4d3127b0",
+							"host": [
+								"{{url}}bookings"
+							],
+							"path": [
+								"681e761e3f02150d4d3127b0"
+							]
+						},
+						"description": "### **Get Booking by ID**\n\n- **URL:** `GET /api/v1/bookings/{id}`\n    \n- **Description:** Get a booking by its ID\n    \n- **Headers:**\n    \n    - `Authorization: Bearer`\n        \n- **Success Response (200):**\n    \n\n```\njsonCopyEdit{\n  \"status\": \"success\",\n  \"data\": {\n    \"id\": \"65fb1231fae43a2b9b9ab123\",\n    \"user\": \"65f11231bcd43a1f9b8ab321\",\n    \"event\": \"65fa94a3c7e32a1b23f93a8e\",\n    \"bookingDate\": \"2025-05-09T12:30:00Z\",\n    \"status\": \"booked\",\n    \"createdAt\": \"2025-05-09T12:30:00Z\",\n    \"updatedAt\": \"2025-05-09T12:30:00Z\"\n  }\n}\n\n ```\n\n- **Error (404):**\n    \n\n```\njsonCopyEdit{\n  \"status\": \"fail\",\n  \"message\": \"Booking not found\"\n}\n\n ```\n\n---"
+					},
+					"response": [
+						{
+							"name": "Update User By Id",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Mahmoud Ahmed",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}user/:id",
+									"host": [
+										"{{url}}user"
+									],
+									"path": [
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "5215999"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "385"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"181-giL5nqFgR/xcJtHhDzyZRKkajo0\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Jan 2025 17:17:16 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User updated successfully\",\n    \"user\": {\n        \"_id\": \"678bc409e439a0a649f0e40b\",\n        \"googleId\": null,\n        \"memberId\": 5215999,\n        \"name\": \"Mahmoud Ahmed\",\n        \"avatar\": \"Sat Jan 18 2025person_1.jpeg\",\n        \"email\": \"omar@syria.com\",\n        \"password\": \"$2b$10$pF/pfuS7jZXD6XMB6zdsTeqhXeF6Viq4T6gp.vxEV6LacV1pULige\",\n        \"followers\": 0,\n        \"following\": 0,\n        \"isDeleted\": false,\n        \"createdAt\": 1737212891421,\n        \"modifiedAt\": 1737212891421,\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "update bookings",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"status\": \"cancelled\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}bookings/681e761e3f02150d4d3127b0",
+							"host": [
+								"{{url}}bookings"
+							],
+							"path": [
+								"681e761e3f02150d4d3127b0"
+							]
+						},
+						"description": "### **Update Booking Status**\n\n- **URL:** `PATCH /api/v1/bookings/{id}`\n    \n- **Description:** Update a booking’s status (`booked` or `cancelled`)\n    \n- **Headers:**\n    \n    - `Authorization: Bearer`\n        \n    - `Content-Type: application/json`\n        \n- **Body:**\n    \n\n```\njsonCopyEdit{\n  \"status\": \"cancelled\"\n}\n\n ```\n\n- **Success Response (200):**\n    \n\n```\njsonCopyEdit{\n  \"status\": \"success\",\n  \"data\": {\n    \"id\": \"65fb1231fae43a2b9b9ab123\",\n    \"user\": \"65f11231bcd43a1f9b8ab321\",\n    \"event\": \"65fa94a3c7e32a1b23f93a8e\",\n    \"bookingDate\": \"2025-05-09T12:30:00Z\",\n    \"status\": \"cancelled\",\n    \"createdAt\": \"2025-05-09T12:30:00Z\",\n    \"updatedAt\": \"2025-05-10T10:00:00Z\"\n  }\n}\n\n ```\n\n---"
+					},
+					"response": [
+						{
+							"name": "Update User By Id",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Mahmoud Ahmed",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}user/:id",
+									"host": [
+										"{{url}}user"
+									],
+									"path": [
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "5215999"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "385"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"181-giL5nqFgR/xcJtHhDzyZRKkajo0\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Jan 2025 17:17:16 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User updated successfully\",\n    \"user\": {\n        \"_id\": \"678bc409e439a0a649f0e40b\",\n        \"googleId\": null,\n        \"memberId\": 5215999,\n        \"name\": \"Mahmoud Ahmed\",\n        \"avatar\": \"Sat Jan 18 2025person_1.jpeg\",\n        \"email\": \"omar@syria.com\",\n        \"password\": \"$2b$10$pF/pfuS7jZXD6XMB6zdsTeqhXeF6Viq4T6gp.vxEV6LacV1pULige\",\n        \"followers\": 0,\n        \"following\": 0,\n        \"isDeleted\": false,\n        \"createdAt\": 1737212891421,\n        \"modifiedAt\": 1737212891421,\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "get all bookings for admin",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}bookings/",
+							"host": [
+								"{{url}}bookings"
+							],
+							"path": [
+								""
+							]
+						},
+						"description": "### **Admin: Get All Bookings**\n\n- **URL:** `GET /api/v1/bookings`\n    \n- **Description:** Get all bookings (admin only)\n    \n- **Headers:**\n    \n    - `Authorization: Bearer`\n        \n- **Query Params:**\n    \n    - `page`: (optional) default is `1`\n        \n    - `limit`: (optional) default is `10`\n        \n- **Example:** `/api/v1/bookings?page=1&limit=5`\n    \n\n---"
+					},
+					"response": [
+						{
+							"name": "Update User By Id",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Mahmoud Ahmed",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}user/:id",
+									"host": [
+										"{{url}}user"
+									],
+									"path": [
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "5215999"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "385"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"181-giL5nqFgR/xcJtHhDzyZRKkajo0\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Jan 2025 17:17:16 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User updated successfully\",\n    \"user\": {\n        \"_id\": \"678bc409e439a0a649f0e40b\",\n        \"googleId\": null,\n        \"memberId\": 5215999,\n        \"name\": \"Mahmoud Ahmed\",\n        \"avatar\": \"Sat Jan 18 2025person_1.jpeg\",\n        \"email\": \"omar@syria.com\",\n        \"password\": \"$2b$10$pF/pfuS7jZXD6XMB6zdsTeqhXeF6Viq4T6gp.vxEV6LacV1pULige\",\n        \"followers\": 0,\n        \"following\": 0,\n        \"isDeleted\": false,\n        \"createdAt\": 1737212891421,\n        \"modifiedAt\": 1737212891421,\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "delete bookings for admin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}bookings/681e6e05eb4c5cb5cab1e817",
+							"host": [
+								"{{url}}bookings"
+							],
+							"path": [
+								"681e6e05eb4c5cb5cab1e817"
+							]
+						},
+						"description": "### **Delete Booking by ID (Admin only)**\n\n- **URL:** `DELETE /api/v1/bookings/{id}`\n    \n- **Headers:**\n    \n    - `Authorization: Bearer`\n        \n- **Success Response (204):**\n    \n\n```\ncssCopyEdit(No content)\n\n ```\n\n- **Error (404):**\n    \n\n```\njsonCopyEdit{\n  \"status\": \"fail\",\n  \"message\": \"Booking not found\"\n}\n\n ```\n\n---"
+					},
+					"response": [
+						{
+							"name": "Update User By Id",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Mahmoud Ahmed",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}user/:id",
+									"host": [
+										"{{url}}user"
+									],
+									"path": [
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "5215999"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "385"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"181-giL5nqFgR/xcJtHhDzyZRKkajo0\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Jan 2025 17:17:16 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User updated successfully\",\n    \"user\": {\n        \"_id\": \"678bc409e439a0a649f0e40b\",\n        \"googleId\": null,\n        \"memberId\": 5215999,\n        \"name\": \"Mahmoud Ahmed\",\n        \"avatar\": \"Sat Jan 18 2025person_1.jpeg\",\n        \"email\": \"omar@syria.com\",\n        \"password\": \"$2b$10$pF/pfuS7jZXD6XMB6zdsTeqhXeF6Viq4T6gp.vxEV6LacV1pULige\",\n        \"followers\": 0,\n        \"following\": 0,\n        \"isDeleted\": false,\n        \"createdAt\": 1737212891421,\n        \"modifiedAt\": 1737212891421,\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:5000/",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzEyODk1NSwiZW1haWwiOiJhaG1lZEBzeXJpYS5jb20iLCJuYW1lIjoiQWhtZWQgSGFtZWQiLCJhdmF0YXIiOm51bGwsImZvbGxvd2VycyI6WyI2NzkzZTlmOTM4MzQwOWY4Y2Y2OGMzM2EiXSwiZm9sbG93aW5nIjpbXSwiaWF0IjoxNzM4MjcxMzQyLCJleHAiOjE3NDYwNDczNDJ9.XAF17LnHXsl0R0BSm2z7gZYytiVuV-8yV__bd6bUYn8",
+			"type": "string"
+		}
+	]
+}
